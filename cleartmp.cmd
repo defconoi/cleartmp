@@ -1,6 +1,6 @@
 @echo off
 REM - ***********************************************************
-REM - cleartmp.cmd - Eric McConkey 2014
+REM - cleartmp.cmd - Eric McConkey 2014 & Kyle Weller 2015
 REM - 
 REM - This script will clear out the following locations:
 REM - 	c:\$recycle.bin
@@ -108,4 +108,10 @@ REM - ***********************************************************
 REM - Clear out the IE cache and tmp folders for all users
 REM - ***********************************************************
 popd
+echo Clear Temporary Internet Files: 
+RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8
+echo Clear Cookies: 
+RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 2
+echo Delete All w/Clear Add-ons Settings: 
+RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 4351
 icsweep /all
