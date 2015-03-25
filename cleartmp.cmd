@@ -108,6 +108,7 @@ REM - ***********************************************************
 REM - Clear out the IE cache and tmp folders for all users
 REM - ***********************************************************
 popd
+icsweep /all
 echo Clear Temporary Internet Files: 
 RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8
 echo Clear Cookies: 
