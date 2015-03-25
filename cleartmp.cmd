@@ -75,6 +75,11 @@ for /d %%d in (*) do if exist "%%~fd\appdata" (
 		rmdir /s /q "%%d\appdata\local\microsoft\windows\wer\"
 	)
 	cd \users
+	echo Clearing Flash Cookies for %%~fd
+	if exist "%%d\appdata\Roaming\Macromedia\Flashp~1" (
+		rmdir /s /q "%%d\appdata\Roaming\Macromedia\Flashp~1"
+	)
+	cd \users
 )
 
 REM - ***********************************************************
